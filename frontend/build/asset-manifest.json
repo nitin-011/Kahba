@@ -1,0 +1,30 @@
+{
+  "files": {
+    "main.css": "/static/css/main.154f8510.css",
+    "main.js": "/static/js/main.d9200326.js",
+    "static/js/453.afe9f109.chunk.js": "/static/js/453.afe9f109.chunk.js",
+    "static/media/image10.jpg": "/static/media/image10.b62c407fcd761c89336e.jpg",
+    "static/media/image2.jpg": "/static/media/image2.df9b4abc3fb9ef8a4d8d.jpg",
+    "static/media/image9.jpg": "/static/media/image9.2c58754f0e9d8710db19.jpg",
+    "static/media/image6.jpg": "/static/media/image6.72efff9a759018b632e7.jpg",
+    "static/media/image5.jpg": "/static/media/image5.63f8e05a85bd21b73c84.jpg",
+    "static/media/image1.jpg": "/static/media/image1.ad36b6fb0183539419cb.jpg",
+    "static/media/image3.jpg": "/static/media/image3.e0eec1cc1553025bf307.jpg",
+    "static/media/image4.jpg": "/static/media/image4.35b8d41bebc839e17f8d.jpg",
+    "static/media/image8.jpg": "/static/media/image8.7cc155ebf3c653edf29b.jpg",
+    "static/media/image7.jpg": "/static/media/image7.d4a1b1f1abfa8ee8bb09.jpg",
+    "static/media/kahbagraphic.png": "/static/media/kahbagraphic.701dafdaa935dd55eaf4.png",
+    "static/media/logo.png": "/static/media/logo.bb0472766fefdedc3fb1.png",
+    "static/media/HolisticHaircutDEMO-Regular.otf": "/static/media/HolisticHaircutDEMO-Regular.460ea15f4900b24f38e0.otf",
+    "static/media/kahbalogo.png": "/static/media/kahbalogo.d986e7f14c6ddd1544a2.png",
+    "static/media/quoteimage2.png": "/static/media/quoteimage2.70393aea26015a840438.png",
+    "index.html": "/index.html",
+    "main.154f8510.css.map": "/static/css/main.154f8510.css.map",
+    "main.d9200326.js.map": "/static/js/main.d9200326.js.map",
+    "453.afe9f109.chunk.js.map": "/static/js/453.afe9f109.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.154f8510.css",
+    "static/js/main.d9200326.js"
+  ]
+}

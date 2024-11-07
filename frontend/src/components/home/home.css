@@ -1,0 +1,77 @@
+/* Home.css */
+
+/* Desktop styles (remain unchanged) */
+.container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    transition: all 1s;
+}
+
+.overlay {
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    padding: 40px;
+}
+
+.kahba-image {
+    height: 16rem;
+    width: 48rem;
+    margin-top: 13rem;
+    margin-left: 2rem;
+}
+
+.text {
+    color: white;
+    font-size: 1.25rem;
+    margin-left: 25rem;
+    font-weight: 500;
+}
+
+.button {
+    margin-left: 75rem;
+    height: 6rem;
+    width: 12rem;
+}
+
+/* Mobile view */
+@media (max-width: 768px) {
+    .container {
+        height: 100vh;
+        background-size: cover;
+        background-position: center;
+    }
+
+    .overlay {
+        padding: 20px; /* Adjust padding for smaller screens */
+        align-items: center; /* Center content horizontally */
+        justify-content: center; /* Center content vertically */
+    }
+
+    .kahba-image {
+        height: 12rem;  /* Reduce height for mobile */
+        width: 20rem;   /* Reduce width for mobile */
+        margin-top: 0;
+        margin-left: 0; /* Center the image */
+    }
+
+    .text {
+        font-size: 1rem; /* Reduce text size for mobile */
+        margin: 1rem 0;  /* Center text */
+        text-align: center; /* Center the text horizontally */
+    }
+
+    .button {
+        margin-left: 0; /* Center the button */
+        height: 4rem;   /* Adjust height for mobile */
+        width: 10rem;   /* Adjust width for mobile */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}

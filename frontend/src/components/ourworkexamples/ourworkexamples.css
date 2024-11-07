@@ -1,0 +1,48 @@
+/* Styling for the About section */
+@font-face {
+    font-family: 'Holistic Haircut';
+    src: url('../../assets/holistic_haircut/HolisticHaircutDEMO-Regular.otf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.our-work-container {
+  padding: 5rem;
+  background-color:#E4D7D0;
+}
+
+.heading{
+    font-family: 'Holistic Haircut', sans-serif;
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+.my-masonry-grid {
+    display: flex;
+    margin-left: -30px; /* gutter size offset */
+    width: auto;
+}
+
+.my-masonry-grid_column {
+    padding-left: 30px; /* gutter size */
+    background-clip: padding-box;
+}
+
+.image-item {
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 30px;
+    border-radius: 10px;
+}
+
+.image-item img {
+    width: 100%;
+    display: block;
+    transition: transform 0.3s ease-in-out;
+    border-radius: 10px;
+    border: 5px solid #f90; /* Yellow border */
+}
+
+.image-item img:hover {
+    transform: scale(1.05);
+}

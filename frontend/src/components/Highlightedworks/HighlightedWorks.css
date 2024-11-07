@@ -1,0 +1,110 @@
+/* HighlightedWorks.css */
+
+/* Main section styling */
+.highlighted-work-section {
+  background-color: #E4D7D0;
+  text-align: center;
+  padding: 40px;
+}
+
+/* Title styling */
+.section-title {
+  font-family: 'Holistic Haircut', sans-serif; /* Matching font name */
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+/* Work gallery for desktop view */
+.work-gallery {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* 2 columns in a row for desktop view */
+  gap: 20px;
+  justify-content: center;
+}
+
+/* Work item styling */
+.work-item {
+  position: relative;
+  width: 100%;
+  height: 600px; /* Adjust as needed */
+  cursor: pointer;
+  background-size: cover;
+  background-position: center;
+}
+
+/* Overlay on hover */
+.work-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  background-color: rgba(0, 0, 0, 0.7); /* Dark overlay */
+  color: white;
+  transition: opacity 0.3s ease;
+}
+
+.work-item:hover .work-overlay {
+  opacity: 1;
+}
+
+/* Overlay text */
+.work-overlay h3 {
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+.work-overlay p {
+  font-size: 1rem;
+  margin: 5px 0;
+}
+
+/* Background images for each project */
+.project-1 {
+  background-image: url('../../assets/image1.jpg');
+}
+
+.project-2 {
+  background-image: url('../../assets/image2.jpg');
+}
+
+.project-3 {
+  background-image: url('../../assets/image3.jpg');
+}
+
+.project-4 {
+  background-image: url('../../assets/image4.jpg');
+}
+
+.project-5 {
+  background-image: url('../../assets/image5.jpg');
+}
+
+.project-6 {
+  background-image: url('../../assets/image6.jpg');
+}
+
+/* Mobile view adjustments */
+@media (max-width: 768px) {
+  .work-gallery {
+    grid-template-columns: 1fr; /* Change to 1 column in a row */
+  }
+
+  .work-item {
+    height: 400px; /* Adjust height for mobile view */
+  }
+
+  .work-overlay h3 {
+    font-size: 1.25rem; /* Slightly reduce text size */
+  }
+
+  .work-overlay p {
+    font-size: 0.875rem; /* Slightly reduce description size */
+  }
+}
