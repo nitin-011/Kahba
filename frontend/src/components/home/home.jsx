@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import kahbagraphic from "../../assets/kahbagraphic.png";
 import Navbar from "../navbar/Navbar";
 import buttongraphic from "../../assets/buttongraphic.png";
-import "./home.css"; // Import the CSS file
 import { Link } from "react-router-dom";
 
 // Array of image URLs from Cloudinary
@@ -19,32 +18,125 @@ const images = [
   "https://res.cloudinary.com/dq8h7dmym/image/upload/v1736845800/image10_srig9x.jpg",
 ];
 
+const styles = {
+  container: {
+    position: 'relative',
+    width: '100%',
+    height: '100vh',
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+    transition: 'all 1s',
+  },
+  overlay: {
+    position: 'absolute',
+    inset: 0,
+    backgroundColor: 'rgba(0, 0, 0, 0.5)',
+    display: 'flex',
+    flexDirection: 'column',
+    padding: '40px',
+  },
+  kahbaImage: {
+    height: '16rem',
+    width: '48rem',
+    marginTop: '13rem',
+    marginLeft: '2rem',
+  },
+  text: {
+    color: 'white',
+    fontSize: '1.25rem',
+    marginLeft: '25rem',
+    fontWeight: 500,
+  },
+  button: {
+    marginLeft: '75rem',
+    height: '6rem',
+    width: '12rem',
+    background: 'none',
+    border: 'none',
+    padding: 0,
+    cursor: 'pointer',
+  },
+};
+
+const mobileStyles = {
+  container: {
+    ...styles.container,
+  },
+  overlay: {
+    ...styles.overlay,
+    padding: '20px',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  kahbaImage: {
+    height: '12rem',
+    width: '20rem',
+    marginTop: 0,
+    marginLeft: 0,
+  },
+  text: {
+    ...styles.text,
+    fontSize: '1rem',
+    margin: '1rem 0',
+    textAlign: 'center',
+    marginLeft: 0,
+  },
+  button: {
+    ...styles.button,
+    marginLeft: 0,
+    height: '4rem',
+    width: '10rem',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+};
+
 const Home = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
 
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
-    }, 60); // Change image every 3 seconds
-    return () => clearInterval(interval);
+    }, 60);
+
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      clearInterval(interval);
+      window.removeEventListener('resize', handleResize);
+    };
   }, []);
+
+  const currentStyles = isMobile ? mobileStyles : styles;
 
   return (
     <div
-      className="container"
       style={{
-        backgroundImage: `url(${images[currentIndex]})`, // Set the image using the correct url() format
+        ...currentStyles.container,
+        backgroundImage: `url(${images[currentIndex]})`,
       }}
     >
-      {/* Navbar */}
       <Navbar />
-      {/* Overlay with text and button */}
-      <div className="overlay">
-        <img src={kahbagraphic} alt="Kahba Graphic" className="kahba-image" />
-        <p className="text">At Kahba, we make space for design.</p>
+      <div style={currentStyles.overlay}>
+        <img
+          src={kahbagraphic}
+          alt="Kahba Graphic"
+          style={currentStyles.kahbaImage}
+        />
+        <p style={currentStyles.text}>At Kahba, we make space for design.</p>
         <Link to="/contact">
-          <button className="button">
-            <img src={buttongraphic} alt="button" className="botton" />
+          <button style={currentStyles.button}>
+            <img
+              src={buttongraphic}
+              alt="button"
+              style={{ width: '100%', height: '100%' }}
+            />
           </button>
         </Link>
       </div>
@@ -53,4 +145,3 @@ const Home = () => {
 };
 
 export default Home;
-

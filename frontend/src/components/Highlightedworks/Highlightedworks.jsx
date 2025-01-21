@@ -1,70 +1,94 @@
-import React from "react";
-import './HighlightedWorks.css';
-import { useNavigate } from 'react-router-dom';
+import React, { useState, useEffect } from "react";
 
-const HighlightedWork = () => {
-  const navigate = useNavigate();
+const images = [
+  "https://res.cloudinary.com/dq8h7dmym/image/upload/v1736848664/project1_os5s6v.png",
+  "https://res.cloudinary.com/dq8h7dmym/image/upload/v1736848623/project2_kppouw.png",
+  "https://res.cloudinary.com/dq8h7dmym/image/upload/v1736848624/project3_eqtaif.png",
+  "https://res.cloudinary.com/dq8h7dmym/image/upload/v1736848623/project_4_atp3r9.png",
+  "https://res.cloudinary.com/dq8h7dmym/image/upload/v1736848625/project5_ykjwnm.png",
+  "https://res.cloudinary.com/dq8h7dmym/image/upload/v1736848625/project6_voxuu8.png",
+  "https://res.cloudinary.com/dq8h7dmym/image/upload/v1736848625/project8_s9irhu.png",
+  "https://res.cloudinary.com/dq8h7dmym/image/upload/v1736848626/project9_rie2xb.png",
+];
 
-  // Function to navigate to the works page
-  const goToWorksPage = () => {
-    navigate('/works');
+const HighlightedWorks = () => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  // Function to handle the next image
+  const nextImage = () => {
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
   };
 
+  // Function to handle the previous image
+  const prevImage = () => {
+    setCurrentIndex((prevIndex) =>
+      prevIndex === 0 ? images.length - 1 : prevIndex - 1
+    );
+  };
+
+  // Automatically change the image every 3 seconds
+  useEffect(() => {
+    const interval = setInterval(() => {
+      nextImage();
+    }, 3000);
+
+    return () => clearInterval(interval); // Cleanup on component unmount
+  }, []);
+
   return (
-    <div className="highlighted-work-section">
-      <h2 className="section-title">Highlighted Works</h2>
-
-      <div className="work-gallery">
-        {/* Project 1 */}
-        <div className="work-item project-1" onClick={goToWorksPage}>
-          <div className="work-overlay">
-            <h3>Project 1</h3>
-            <p>Description about Project 1</p>
-          </div>
-        </div>
-
-        {/* Project 2 */}
-        <div className="work-item project-2" onClick={goToWorksPage}>
-          <div className="work-overlay">
-            <h3>Project 2</h3>
-            <p>Description about Project 2</p>
-          </div>
-        </div>
-
-        {/* Project 3 */}
-        <div className="work-item project-3" onClick={goToWorksPage}>
-          <div className="work-overlay">
-            <h3>Project 3</h3>
-            <p>Description about Project 3</p>
-          </div>
-        </div>
-
-        {/* Project 4 */}
-        <div className="work-item project-4" onClick={goToWorksPage}>
-          <div className="work-overlay">
-            <h3>Project 4</h3>
-            <p>Description about Project 4</p>
-          </div>
-        </div>
-
-        {/* Project 5 */}
-        <div className="work-item project-5" onClick={goToWorksPage}>
-          <div className="work-overlay">
-            <h3>Project 5</h3>
-            <p>Description about Project 5</p>
-          </div>
-        </div>
-
-        {/* Project 6 */}
-        <div className="work-item project-6" onClick={goToWorksPage}>
-          <div className="work-overlay">
-            <h3>Project 6</h3>
-            <p>Description about Project 6</p>
-          </div>
-        </div>
-      </div>
+    <div style={styles.carousel}>
+      <div
+        style={{
+          ...styles.carouselBackground,
+          backgroundImage: `url(${images[currentIndex]})`,
+        }}
+      ></div>
+      <button style={{ ...styles.carouselButton, ...styles.leftButton }} onClick={prevImage}>
+        &#8249;
+      </button>
+      <button style={{ ...styles.carouselButton, ...styles.rightButton }} onClick={nextImage}>
+        &#8250;
+      </button>
     </div>
   );
 };
 
-export default HighlightedWork;
+const styles = {
+  carousel: {
+    position: "relative",
+    width: "100vw",
+    height: "100vh",
+    overflow: "hidden",
+  },
+  carouselBackground: {
+    width: "100%",
+    height: "100%",
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+    transition: "background-image 0.5s ease-in-out",
+  },
+  carouselButton: {
+    position: "absolute",
+    top: "50%",
+    transform: "translateY(-50%)",
+    background: "none",
+    color: "white",
+    border: "none",
+    padding: "10px",
+    cursor: "pointer",
+    zIndex: 2,
+    fontSize: "30px",
+  },
+  leftButton: {
+    left: "10px",
+  },
+  rightButton: {
+    right: "10px",
+  },
+  carouselButtonHover: {
+    color: "#ffcc00",
+    transform: "translateY(-50%) scale(1.1)",
+  },
+};
+
+export default HighlightedWorks;
