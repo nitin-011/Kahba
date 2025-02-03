@@ -16,3 +16,10 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+@font-face {
+  font-family: 'Holistic Haircut';
+  src: url('./assets/holistic_haircut/HolisticHaircutDEMO-Regular.otf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}

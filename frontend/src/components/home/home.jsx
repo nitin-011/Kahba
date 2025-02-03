@@ -21,10 +21,7 @@ const images = [
 const styles = {
   container: {
     position: 'relative',
-    width: '100%',
     height: '100vh',
-    backgroundSize: 'cover',
-    backgroundPosition: 'center',
     transition: 'all 1s',
   },
   overlay: {
@@ -34,28 +31,37 @@ const styles = {
     display: 'flex',
     flexDirection: 'column',
     padding: '40px',
+    justifyContent: 'center',
+
   },
   kahbaImage: {
     height: '16rem',
     width: '48rem',
-    marginTop: '13rem',
-    marginLeft: '2rem',
+    marginTop: '10rem',
+    alignSelf: 'left',
   },
   text: {
     color: 'white',
     fontSize: '1.25rem',
-    marginLeft: '25rem',
     fontWeight: 500,
+    textAlign: 'center',
   },
   button: {
-    marginLeft: '75rem',
     height: '6rem',
     width: '12rem',
     background: 'none',
     border: 'none',
     padding: 0,
     cursor: 'pointer',
+    marginTop: '20px',
+    alignSelf: 'right',
   },
+  buttonDiv: {
+    display: 'flex',
+    justifyContent: 'right',
+    paddingRight: '10vw',
+    width: '100%',
+  }
 };
 
 const mobileStyles = {
@@ -65,30 +71,23 @@ const mobileStyles = {
   overlay: {
     ...styles.overlay,
     padding: '20px',
-    alignItems: 'center',
     justifyContent: 'center',
+    alignItems: 'center',
   },
   kahbaImage: {
     height: '12rem',
     width: '20rem',
-    marginTop: 0,
-    marginLeft: 0,
+    marginTop: '0',
   },
   text: {
     ...styles.text,
     fontSize: '1rem',
     margin: '1rem 0',
-    textAlign: 'center',
-    marginLeft: 0,
   },
   button: {
     ...styles.button,
-    marginLeft: 0,
-    height: '4rem',
+    height: '6rem',
     width: '10rem',
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
   },
 };
 
@@ -99,7 +98,7 @@ const Home = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
-    }, 60);
+    }, 6000);
 
     const handleResize = () => {
       setIsMobile(window.innerWidth <= 768);
@@ -117,9 +116,12 @@ const Home = () => {
 
   return (
     <div
+      className="responsive-bg"
       style={{
         ...currentStyles.container,
         backgroundImage: `url(${images[currentIndex]})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
       }}
     >
       <Navbar />
@@ -130,6 +132,7 @@ const Home = () => {
           style={currentStyles.kahbaImage}
         />
         <p style={currentStyles.text}>At Kahba, we make space for design.</p>
+        <div style={currentStyles.buttonDiv}>
         <Link to="/contact">
           <button style={currentStyles.button}>
             <img
@@ -139,9 +142,11 @@ const Home = () => {
             />
           </button>
         </Link>
+        </div>
       </div>
     </div>
   );
 };
 
 export default Home;
+
