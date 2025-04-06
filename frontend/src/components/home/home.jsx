@@ -6,16 +6,16 @@ import { Link } from "react-router-dom";
 
 // Array of image URLs from Cloudinary
 const images = [
-  "https://res.cloudinary.com/dq8h7dmym/image/upload/v1736845796/image1_ksqx0s.jpg",
+  "https://res.cloudinary.com/dq8h7dmym/image/upload/v1743913686/image1_gc9jbe.svgg",
   "https://res.cloudinary.com/dq8h7dmym/image/upload/v1736845796/image2_m2tvuz.jpg",
   "https://res.cloudinary.com/dq8h7dmym/image/upload/v1736845797/image3_brxviq.jpg",
-  "https://res.cloudinary.com/dq8h7dmym/image/upload/v1736845797/image4_oin9g1.jpg",
-  "https://res.cloudinary.com/dq8h7dmym/image/upload/v1736845797/image5_toxvpg.jpg",
-  "https://res.cloudinary.com/dq8h7dmym/image/upload/v1736845797/image6_gqw4r9.jpg",
-  "https://res.cloudinary.com/dq8h7dmym/image/upload/v1736845798/image7_pypjrp.jpg",
-  "https://res.cloudinary.com/dq8h7dmym/image/upload/v1736845799/image8_o3ghy3.jpg",
-  "https://res.cloudinary.com/dq8h7dmym/image/upload/v1736845799/image9_z1ctet.jpg",
-  "https://res.cloudinary.com/dq8h7dmym/image/upload/v1736845800/image10_srig9x.jpg",
+  "https://res.cloudinary.com/dq8h7dmym/image/upload/v1743913687/image6_huok3l.svg",
+  "https://res.cloudinary.com/dq8h7dmym/image/upload/v1743913687/image5_cxwna0.svg",
+  "https://res.cloudinary.com/dq8h7dmym/image/upload/v1743913689/image7_zzafdg.svg",
+  "https://res.cloudinary.com/dq8h7dmym/image/upload/v1743913690/image9_awxwno.svg",
+  "https://res.cloudinary.com/dq8h7dmym/image/upload/v1743913689/image8_ga5bw4.svg",
+  "https://res.cloudinary.com/dq8h7dmym/image/upload/v1743913694/image4_wtldvb.svg",
+  "https://res.cloudinary.com/dq8h7dmym/image/upload/v1743913692/image10_lnanoo.svg",
 ];
 
 const styles = {
