@@ -6,9 +6,9 @@ import { Link } from "react-router-dom";
 
 // Array of image URLs from Cloudinary
 const images = [
-  "https://res.cloudinary.com/dq8h7dmym/image/upload/v1743913686/image1_gc9jbe.svgg",
-  "https://res.cloudinary.com/dq8h7dmym/image/upload/v1736845796/image2_m2tvuz.jpg",
-  "https://res.cloudinary.com/dq8h7dmym/image/upload/v1736845797/image3_brxviq.jpg",
+  "https://res.cloudinary.com/dq8h7dmym/image/upload/v1743913686/image1_gc9jbe.svg",
+  "https://res.cloudinary.com/dq8h7dmym/image/upload/v1743913686/image2_yifo7y.svg",
+  "https://res.cloudinary.com/dq8h7dmym/image/upload/v1743913687/image3_uv2mse.svg",
   "https://res.cloudinary.com/dq8h7dmym/image/upload/v1743913687/image6_huok3l.svg",
   "https://res.cloudinary.com/dq8h7dmym/image/upload/v1743913687/image5_cxwna0.svg",
   "https://res.cloudinary.com/dq8h7dmym/image/upload/v1743913689/image7_zzafdg.svg",
